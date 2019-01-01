@@ -5,11 +5,53 @@
 <body>
     <script>
         function computerPlay(){
-            
+            num = Math.floor(Math.random() * 3);
+            switch(num){
+                case 0:
+                return "rock";
+                case 1:
+                return "paper";
+                case 2:
+                return "scissors";
+            }
         }
+        function game(playerSelection, computerSelection){
+            let playerSelection = prompt("rock paper or scissors");
+            const computerSelection = computerPlay;
+            console.log(playRound(playerSelection, computerSelection));
         function playRound(playerSelection, computerSelection){
-
+            if (playerSelection == "rock" && computerSelection == "scissors"){
+                return "rock beats scissors, winner";
+            }
+            else if (playerSelection == "rock" && computerSelection == "paper"){
+                return "paper beats rock, loser";
+            }
+            else if (playerSelection == "rock" && computerSelection == "rock"){
+                return "tie; rock and rock";
+            }
+            else if (playerSelection == "paper" && computerSelection == "rock"){
+                return "paper beats rock, winner";
+            }
+            else if (playerSelection == "paper" && computerSelection == "scissors"){
+                return "scissors beats paper, loser";
+            }
+            else if (playerSelection == "paper" && computerSelection == "paper"){
+                return "tie; paper and paper";
+            }
+            else if (playerSelection == "scissors" && computerSelection == "rock"){
+                return "rock beats scissors, loser";
+            }
+            else if (playerSelection == "scissors" && computerSelection == "paper"){
+                return "scissors beats paper, winner";
+            }
+            else if (playerSelection == "scissors" && computerSelection == "scissors"){
+                return "tie; scissors and scissors";
+            }
+            else{
+                return "wrong input";
+            }
         }
+    }
     </script>
 </body>
 </html>
